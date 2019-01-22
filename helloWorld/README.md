@@ -48,13 +48,23 @@ Many of these suggestions come from [here](https://medium.com/productivity-freak
 - Install the 'atom-beautify' package. `⌃ + ⌥ + B` (ctrl + option + B) to beautify a file.
 
 # Creating basic react page
-- created index.js, hello.js
-- Added react element to html element with id 'greeting'
-- created index.html. Has div with id 'greeting' and includes a bundled script
-- Configured webpack.config.js
-- Added package.json script to run webpack (wp)
-- npm run wp
+This is the super brief rundown of getting the React page live
+
+- Created `static/index.js` and `static/hello.js`. These are the absolute most basic React components possible.
+- Created `dist/` directory. This separates the static html and bundled code from the JS that we are modifying in our source code
+- Create Added react element to html element with id 'greeting'
+- Created `dist/index.html`. Has div with id 'greeting' (which is required and referenced in `static/index.js#render()`) and includes a script called `bundle.js` (not yet created...)
+- Configured webpack.config.js. I cheated an used a config from a personal project to speed up the process... Webpack configuration is a massive topic. The important pieces:
+  - `const` definitions give us access to varying JS libraries
+  - entry: Where our main React component is that drives the application. This file is then scanned for dependencies to create a dependency graph
+  - output: Where to store the created bundle
+  - Modules: Again, a massive topic on their own... the important part is this is how Webpack knows how to do its work. We test all filenames for `*.js`. If the file matches, use babel to transpile the code using a bunch of default configurations (e.g. `@babel/preset-react`)
+  - Optimization: Use uglify-js to minify our bundles. Sacrifices web-page src readability to speed.
+- Added a new script (wp) in `package.json` to shorten running webpack (see the `script` tag in `package.json`)
+- Bundle the frontend for runtime execution: `npm run wp`
+  - The project literally cannot run without this. Something to do with React using EcmaScript 7 by default and most browsers not having full compatibility. Running the webpack build transpiles the code to icky normal javascript.
 
 # References
 <sup>1</sup> https://www.robinwieruch.de/react-js-macos-setup/
+
 <sup>2</sup> https://medium.com/the-self-taught-programmer/what-is-webpack-and-why-should-i-care-part-1-introduction-ca4da7d0d8dc
