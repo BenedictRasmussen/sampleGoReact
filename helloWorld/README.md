@@ -25,7 +25,35 @@ $ npm --version
 ### Installing
 ```
 npm install webpack
+npm install webpack-cli
+npm install uglifyjs-webpack-plugin
+npm i babel-loader
+npm i @babel/core
+npm i @babel/plugin-proposal-object-rest-spread
+npm i @babel/plugin-proposal-class-properties
+npm i @babel/preset-react
+npm i @babel/preset-env
 ```
+## React
+### Installing React
+```
+npm install react
+npm install react-dom
+```
+
+## Atom Packages
+Many of these suggestions come from [here](https://medium.com/productivity-freak/my-atom-editor-setup-for-js-react-9726cd69ad20).
+
+- Install the 'react' package.
+- Install the 'atom-beautify' package. `⌃ + ⌥ + B` (ctrl + option + B) to beautify a file.
+
+# Creating basic react page
+- created index.js, hello.js
+- Added react element to html element with id 'greeting'
+- created index.html. Has div with id 'greeting' and includes a bundled script
+- Configured webpack.config.js
+- Added package.json script to run webpack (wp)
+- npm run wp
 
 # References
 <sup>1</sup> https://www.robinwieruch.de/react-js-macos-setup/

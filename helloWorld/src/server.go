@@ -17,7 +17,7 @@ func main() {
 		})
 	*/
 
-	http.Handle("/", http.FileServer(http.Dir("./static")))
+	http.Handle("/", http.FileServer(http.Dir("./dist")))
 
 	//http.ListenAndServe(":80", nil)
 	log.Fatal(http.ListenAndServeTLS(":8080", "certs/server.crt", "certs/server.key", nil))
