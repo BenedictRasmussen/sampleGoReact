@@ -55,11 +55,10 @@ npm install react-dom
 ```
 
 # Creating basic react page
-This is the super brief rundown of getting the React page live
+This is the super brief rundown of getting the React page live.
 
 - Created `static/index.js` and `static/hello.js`. These are the absolute most basic React components possible.
-- Created `dist/` directory. This separates the static html and bundled code from the JS that we are modifying in our source code
-- Create Added react element to html element with id 'greeting'
+- Created `dist/` directory<sup>3</sup>. This separates the static html and bundled code from the JS that we are modifying in our source code
 - Created `dist/index.html`. Has div with id 'greeting' (which is required and referenced in `static/index.js#render()`) and includes a script called `bundle.js` (not yet created...)
 - Configured webpack.config.js. I cheated an used a config from a personal project to speed up the process... Webpack configuration is a massive topic. The important pieces:
   - `const` definitions give us access to varying JS libraries
@@ -75,3 +74,5 @@ This is the super brief rundown of getting the React page live
 <sup>1</sup> https://www.robinwieruch.de/react-js-macos-setup/
 
 <sup>2</sup> https://medium.com/the-self-taught-programmer/what-is-webpack-and-why-should-i-care-part-1-introduction-ca4da7d0d8dc
+
+<sup>3</sup> https://tutorialedge.net/golang/creating-simple-web-server-with-golang/
